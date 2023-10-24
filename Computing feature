@@ -1,0 +1,184 @@
+/*
+ * To modify the license header, select License Headers in Project Properties.
+ * To edit this template file, select Tools | Templates and open the template in the code editor.
+ */
+package computing.features;
+
+import java.util.Scanner;
+
+/**
+ *
+ * Author: Sacil_CPE
+ */
+public class ComputingFeatures {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        System.out.println("Hello! this is Jev's Computing Features");
+        System.out.println("  ");
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.println("Please Select an Option:");
+        System.out.println( "  " + "1. Temperature Converter");
+        System.out.println( "  " + "2. Odd/Even Number Checker");
+        System.out.println( "  " + "3. Trigonometric Calculator");
+        System.out.println( "  " + "4. Polygon Surface Area Calculator");
+        int choice = inputScanner.nextInt();
+
+        if (choice == 1) {
+            System.out.println("Please select a conversion:");
+            System.out.println("  ");
+            System.out.println("1. Celsius to Fahrenheit");
+            System.out.println("2. Fahrenheit to Celsius");
+            System.out.println("3. Kelvin to Celsius");
+            System.out.println("4. Kelvin to Fahrenheit");
+            System.out.println("5. Celsius to Kelvin");
+            System.out.println("6. Fahrenheit to Kelvin");
+            int conversionChoice = inputScanner.nextInt();
+
+            switch (conversionChoice) {
+                case 1:
+                    System.out.println("Enter the value to convert:");
+                    double celsius = inputScanner.nextDouble();
+                    double fahrenheit = (celsius * 9 / 5) + 32;
+                    System.out.println("The result is:" + " " + fahrenheit);
+                    break;
+
+                case 2:
+                    System.out.println("Enter the value to convert:");
+                    double fahrenheit2 = inputScanner.nextDouble();
+                    double celsius2 = (fahrenheit2 - 32) * 5 / 9;
+                    System.out.println("The result is:" + " " + celsius2);
+                    break;
+
+                case 3:
+                    System.out.println("Enter the value to convert:");
+                    double kelvin = inputScanner.nextDouble();
+                    double celsius3 = kelvin - 273.15;
+                    System.out.println("The result is:" + " " + celsius3);
+                    break;
+
+                case 4:
+                    System.out.println("Enter the value to convert:");
+                    double kelvin2 = inputScanner.nextDouble();
+                    double fahrenheit3 = (kelvin2 - 273.15) * 9 / 5 + 32;
+                    System.out.println("The result is:" + " " + fahrenheit3);
+                    break;
+
+                case 5:
+                    System.out.println("Enter the value to convert:");
+                    double celsius4 = inputScanner.nextDouble();
+                    double kelvin3 = celsius4 + 273.15;
+                    System.out.println("The result is:" + " " + kelvin3);
+                    break;
+
+                case 6:
+                    System.out.println("Enter the value to convert:");
+                    double fahrenheit4 = inputScanner.nextDouble();
+                    double kelvin4 = (fahrenheit4 - 32) * 5 / 9 + 273.15;
+                    System.out.println("The result is:" + " " + kelvin4);
+                    break;
+            }
+
+        } else if (choice == 2) {
+
+            System.out.print("Enter a Number: ");
+            int number = inputScanner.nextInt();
+            if (number % 2 == 0) {
+                System.out.println(number + " is even.");
+            } else {
+                System.out.println(number + " is odd.");
+            }
+
+        } else if (choice == 3) {
+
+            System.out.println("Please choose trigonometric functions:");
+            System.out.println("  ");
+            System.out.println("1. Sine (sin)");
+            System.out.println("2. Cosine (cos)");
+            System.out.println("3. Tangent (tan)");
+
+            int trigFunction = inputScanner.nextInt();
+
+            switch (trigFunction) {
+
+                case 1:
+                    System.out.println("Enter a value in degrees:");
+                    double sineValue = inputScanner.nextDouble();
+                    System.out.println("The sine of" + " " + sineValue + " " + "is:" + " " + Math.sin(Math.toRadians(sineValue));
+                    break;
+
+                case 2:
+                    System.out.println("Enter a value in degrees:");
+                    double cosineValue = inputScanner.nextDouble();
+                    System.out.println("The cosine of" + " " + cosineValue + " " + "is:" + " " + Math.cos(Math.toRadians(cosineValue));
+                    break;
+
+                case 3:
+                    System.out.println("Enter a value in degrees:");
+                    double tangentValue = inputScanner.nextDouble();
+                    System.out.println("The tangent of" + " " + tangentValue + " " + "is:" + " " + Math.tan(Math.toRadians(tangentValue));
+                    break;
+            }
+
+        } else if (choice == 4) {
+
+            System.out.println("Please choose a polygon:");
+            System.out.println("  ");
+            System.out.println("1. Triangle");
+            System.out.println("2. Square");
+            System.out.println("3. Rectangle");
+            System.out.println("4. Circle");
+            int polygonChoice = inputScanner.nextInt();
+
+            switch (polygonChoice) {
+
+                case 1:
+                    System.out.println("Enter the values of three sides of a triangle");
+                    System.out.println("Side 1:");
+                    double side1 = inputScanner.nextDouble();
+                    System.out.println("Side 2:");
+                    double side2 = inputScanner.nextDouble();
+                    System.out.println("Side 3:");
+                    double side3 = inputScanner.nextDouble();
+
+                    double semiPerimeter = ((side1 + side2 + side3) / 2);
+                    double area = Math.sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3));
+
+                    System.out.println("The area of the triangle is:" + " " + area);
+                    break;
+
+                case 2:
+                    System.out.println("Enter the value of the side length of a square:");
+                    double squareSide = inputScanner.nextDouble();
+
+                    double areaSquare = (squareSide * squareSide);
+
+                    System.println("The area of the square is:" + " " + areaSquare);
+                    break;
+
+                case 3:
+                    System.out.println("Enter the values of the length and width of a rectangle");
+                    System.out.println("Length:");
+                    double length = inputScanner.nextDouble();
+                    System.out.println("Width:");
+                    double width = inputScanner.nextDouble();
+
+                    double areaRectangle = (length * width);
+
+                    System.out.println("The area of a rectangle is:" + " " + areaRectangle);
+
+                case 4:
+                    System.out.println("Enter the value of the radius of a circle:");
+                    double radius = inputScanner.nextDouble();
+
+                    double areaCircle = (Math.PI * radius * radius);
+
+                    System.out.println("The area of a circle is:" + " " + areaCircle);
+            }
+
+        }
+    }
+}
