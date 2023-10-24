@@ -1,0 +1,79 @@
+/*
+ * To change the license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates and open the template in the code editor.
+ */
+package switch.pkg;
+
+import java.util.Scanner;
+
+/**
+ *
+ * Author: Jev_CPE
+ */
+public class Switch {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Temperature Converter App");
+        System.out.println("Select Operation");
+        System.out.println("[1. Celsius to Fahrenheit]"
+                + "[2. Fahrenheit to Celsius]"
+                + "[3. Kelvin to Fahrenheit]"
+                + "[4. Kelvin to Celsius]"
+                + "[5. Celsius to Kelvin]"
+                + "[6. Fahrenheit to Kelvin]");
+        System.out.println("Enter your choice: ");
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1:
+                Scanner celsiusScanner = new Scanner(System.in);
+                System.out.print("Enter the temperature in Celsius: ");
+                double celsius = celsiusScanner.nextDouble();
+                double fahrenheit = (celsius * 9 / 5) + 32;
+                System.out.println("Temperature in Fahrenheit: " + fahrenheit);
+                celsiusScanner.close();
+                break;
+
+            case 2:
+                System.out.print("Enter the temperature in Fahrenheit: ");
+                double fahrenheitInput = input.nextDouble();
+                double celsiusResult = ((fahrenheitInput - 32) * 5 / 9);
+                System.out.println("Temperature in Celsius: " + celsiusResult);
+                break;
+
+            case 3:
+                System.out.print("Enter the temperature in Kelvin: ");
+                double kelvinInput = input.nextDouble();
+                double fahrenheitResult = (((kelvinInput - 273.15) * 9 / 5) + 32);
+                System.out.println("Temperature in Fahrenheit: " + fahrenheitResult);
+                break;
+
+            case 4:
+                System.out.print("Enter the temperature in Kelvin: ");
+                double kelvinInput2 = input.nextDouble();
+                double celsiusResult2 = ((kelvinInput2 - 273.15));
+                System.out.println("Temperature in Celsius: " + celsiusResult2);
+                break;
+
+            case 5:
+                System.out.print("Enter the temperature in Celsius: ");
+                double celsiusInput = input.nextDouble();
+                double kelvinResult = ((celsiusInput + 273.15));
+                System.out.println("Temperature in Kelvin: " + kelvinResult);
+                break;
+
+            case 6:
+                System.out.print("Enter the temperature in Fahrenheit: ");
+                double fahrenheitInput2 = input.nextDouble();
+                double kelvinResult2 = (((fahrenheitInput2 - 32) * 5 / 9 + 273.15));
+                System.out.println("Temperature in Kelvin: " + kelvinResult2);
+                break;
+        }
+
+        input.close();
+    }
+}
